@@ -1,0 +1,72 @@
+@use "../colors.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 1vw;
+  font-family: "Acme";
+  cursor: url(../../svgs/circle.svg) 15 15, move;
+}
+
+body {
+  user-select: none; // make text non-selectable
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bird {
+  animation: flyAndBobAndLeft 3s linear forwards;
+}
+
+@keyframes flyAndBobAndLeft {
+  0% {
+    transform: translate(-5%, 0) translateY(-2%);
+  }
+  25% {
+    transform: translate(-8%, 5%) translateY(-5%);
+  }
+  50% {
+    transform: translate(-12%, -5%) translateY(0);
+  }
+  75% {
+    transform: translate(-14%, 0%) translateY(0%);
+  }
+  100% {
+    transform: translate(-18%, 1%) translateY(0);
+  }
+}
+
+#bird-wing {
+  transform-origin: center;
+  animation: flapWings 3s ease-in-out alternate;
+}
+
+@keyframes flapWings {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1.5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(1.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
