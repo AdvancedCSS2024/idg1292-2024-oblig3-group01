@@ -70,3 +70,19 @@ body::-webkit-scrollbar {
     transform: rotate(0deg);
   }
 }
+
+#leaves {
+  animation: leafBlow 2s ease-in-out infinite;
+}
+
+@keyframes leafBlow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
