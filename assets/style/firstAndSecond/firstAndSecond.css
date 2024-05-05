@@ -70,7 +70,7 @@ html {
   position: absolute;
   font-size: 8vw;
   height: 8.5vw;
-  color: #e8ecea;
+  color: #1e5e4b;
   z-index: 1;
   opacity: calc(1 - var(--paragraph-opacity, 0));
 }
@@ -391,11 +391,11 @@ html {
   opacity: 0.4;
 }
 .forest__patch--left {
-  transform: translateX(calc(-50% - var(--patch-pos, 0px)));
+  transform: translateX(calc(-51% - var(--patch-pos, 0px)));
   position: absolute;
 }
 .forest__patch--right {
-  transform: translateX(calc(50% + var(--patch-pos, 0px)));
+  transform: translateX(calc(51% + var(--patch-pos, 0px)));
   position: absolute;
 }
 
@@ -410,16 +410,20 @@ html {
 .bulldozer__svg--active {
   animation: bulldozerDrive 7s linear forwards;
 }
+.bulldozer__group--pipe {
+  animation: pipeShake 0.5s linear infinite;
+}
+.bulldozer__group--lift {
+  animation: rocking 0.5s alternate infinite;
+}
+.bulldozer__group--body {
+  animation: upDown 0.5s alternate infinite;
+}
 
 @keyframes windowsOnAnimation {
   100% {
     background-color: rgb(255, 255, 197);
     box-shadow: 0px 0px 20px 4px rgba(255, 255, 170, 0.4);
-  }
-}
-@keyframes bulldozerDrive {
-  100% {
-    left: 200%;
   }
 }
 @keyframes introTreesGrow {
@@ -435,10 +439,33 @@ html {
     left: 200%;
   }
 }
-.bulldozer {
-  animation: bulldozerDrive 7s linear;
+@keyframes rocking {
+  from {
+    transform: rotate(0) translateY(-30px);
+  }
+  to {
+    transform: rotate(2deg) translateY(-40px);
+  }
 }
-
+@keyframes upDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@keyframes pipeShake {
+  0%, 50%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
 @keyframes fallTreeOne {
   10%, 14% {
     transform: translate(-2%, 30%) rotate(30deg);
