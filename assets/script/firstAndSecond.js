@@ -77,10 +77,10 @@ function sceneTwoPhaseThree(par) {
 }
 
 document.addEventListener('wheel', (event) => {
-    const patchPosition = (forestPatchPosition = forestPatchPosition > 0 ? 0 : forestPatchPosition).toString() * 25;
+    const patchPosition = (forestPatchPosition = forestPatchPosition > 0 ? 0 : forestPatchPosition).toString();
     leftPatchVal.getBoundingClientRect().left < -30 ? (event.deltaY < 0 ? forestPatchPosition++ : forestPatchPosition--) : sceneOnePhaseTwo(event);
     firstPhaseThree ? sceneOnePhaseThree(event) : null;
-    patches.forEach(patch => patch.style.setProperty('--patch-pos', `${patchPosition}px`));
+    patches.forEach(patch => patch.style.setProperty('--patch-pos', `${patchPosition}%`));
     secondSceneInitiation ? sceneTwoPhaseOne(event) : sceneTwoPhaseOne(event);
     secondPhaseTwo ? sceneTwoPhaseTwo(event) : sceneTwoPhaseTwo(event);
 });

@@ -73,22 +73,19 @@ html {
   color: #e8ecea;
   z-index: 1;
   opacity: calc(1 - var(--paragraph-opacity, 0));
-  height: 11vw;
 }
 .scene__headline--one {
   position: absolute;
   display: block;
-  left: -100%;
-  width: auto;
-  transform: translateX(-100%);
+  left: -20vw;
+  width: 20vw;
   animation: headLinePartOneAnimation 0.3s forwards;
 }
 .scene__headline--two {
   display: block;
   left: 100%;
-  width: auto;
+  width: 20vw;
   position: absolute;
-  transform: translateX(0%);
   animation: headLinePartTwoAnimation 0.3s forwards;
 }
 .scene__second {
@@ -358,25 +355,24 @@ html {
   bottom: 2vw;
   width: 105%;
   left: -2.5%;
-  z-index: 2;
 }
 .forest__tree {
   transform-origin: center;
 }
 .forest__tree--one {
-  animation: fallTreeOne 7s linear;
+  animation: fallTreeOne 7s linear forwards;
 }
 .forest__tree--two {
-  animation: fallTreeTwo 7s linear;
+  animation: fallTreeTwo 7s linear forwards;
 }
 .forest__tree--three {
-  animation: fallTreeThree 7s linear;
+  animation: fallTreeThree 7s linear forwards;
 }
 .forest__tree--four {
-  animation: fallTreeFour 7s linear;
+  animation: fallTreeFour 7s linear forwards;
 }
 .forest__tree--five {
-  animation: fallTreeFive 7s linear;
+  animation: fallTreeFive 7s linear forwards;
 }
 .forest__patch--one {
   fill: #1e5e4b;
@@ -409,7 +405,7 @@ html {
   position: absolute;
   z-index: 2;
   bottom: 0;
-  left: -60vw;
+  left: -100vw;
 }
 .bulldozer__svg--active {
   animation: bulldozerDrive 7s linear forwards;
@@ -431,7 +427,7 @@ html {
     bottom: -50%;
   }
   100% {
-    bottom: 2%;
+    bottom: 2vw;
   }
 }
 @keyframes bulldozerDrive {
@@ -527,12 +523,12 @@ html {
 }
 @keyframes headLinePartTwoAnimation {
   100% {
-    left: 50.5%;
+    left: 50%;
   }
 }
 @keyframes headLinePartOneAnimation {
   100% {
-    left: 49.8%;
+    left: calc(50% - 14vw);
   }
 }
 @keyframes deerOpacity {
@@ -563,7 +559,7 @@ html {
   }
   80%, 100% {
     bottom: 14vw;
-    left: 90%;
+    left: 110%;
   }
 }
 @keyframes deerLegsOne {
